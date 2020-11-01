@@ -5,25 +5,24 @@ using namespace std;
 
 template <typename value_type>
 class BTNode
-        Class BTNode (I)
-class BTNode
 {
     public:
         // Constructors
         BTNode();
-        BTNode(value_type data, BTNode* parent, BTNode* left, BTNode* right);
+        BTNode(value_type data_, BTNode* parent_, BTNode* left_, BTNode* right_);
+        BTNode(value_type data_);
         // Destructor
         ~BTNode();
         // Mutators
-        void setData(const value_type);
-        void setParent(BTNode*);
-        void setLeft(BTNode*);
-        void setRight(BTNode*);
+        void setData(const value_type data_);
+        void setParent(BTNode<value_type>* parent_);
+        void setLeft(BTNode<value_type>* left_);
+        void setRight(BTNode<value_type>* right_);
         // Query
         value_type getData() const;
-        BTNode* getParent();
-        BTNode* getRight();
-        BTNode* getLeft();
+        BTNode<value_type>* getParent();
+        BTNode<value_type>* getRight();
+        BTNode<value_type>* getLeft();
 
     private:
         value_type data;

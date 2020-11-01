@@ -8,8 +8,10 @@
 #include <iostream>
 #include <cstdlib>
 #include <time.h>
-#include "BSTree.h"
+//#include "BSTree.h"
 //#include "HTable.h"
+#include <string>
+#include "BTNode.h"
 using namespace std;
 
 int main()
@@ -59,7 +61,7 @@ int main()
 	cout << "Time elapsed: " << (clock() - t)/1000.0 << " seconds" << endl; 		// prints elapsed time.
 	cout << "Time per ins/del operation: " << 1000.0*(double)(clock() - t)/(double)(500000*17) << " milliseconds." << endl << endl;
 
-
+/*
 	cout << "==================" << endl << "HASH TABLE" << endl;
 	t = clock(); 																	// gets current time
 	for (int i=0; i<numberOfElements1; i++) {tableValues.add(vectorStudents1[i]);} 	// populates the main hash table.
@@ -67,7 +69,7 @@ int main()
 	
 	tableValues += tableAux; 														// tests overloaded += operator
 	
-	/*cout << "Initial hash table: " << tableValues << endl; 							// prints the contents of the hash table.
+	cout << "Initial hash table: " << tableValues << endl; 							// prints the contents of the hash table.
 
 	for (int i=0; i<500000; i++)													// add and remove over and over again
 	{ 
