@@ -8,10 +8,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <time.h>
-//#include "BSTree.h"
+#include "BSTree.h"
 //#include "HTable.h"
-#include <string>
-#include "BTNode.h"
 using namespace std;
 
 int main()
@@ -21,7 +19,7 @@ int main()
 	BSTree<string> treeAux;
 	//HTable<string> tableValues;
 	//HTable<string> tableAux;
-
+/*
 	string vectorStudents1[] = {"Alex", "John", "Mary", "Peter" , "Miranda" , "Claudia" , "Sandy" , "Daniel" , "Rick" , "Patricia" , "Adam" , "Bianca" , "Nadia", "Sylvia", "Pamela"};
 	string vectorStudents2[] = {"Travis", "Michelle", "Steve", "Phil", "Hugh", "Oliver", "Kate", "Tim", "David", "Ingrid", "Tom", "Fred", "Bill"};
 	

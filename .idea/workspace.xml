@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -46,6 +49,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
   </component>
   <component name="RunManager">
     <configuration name="Assignment3" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" RUN_PATH="$PROJECT_DIR$/TreeHashTableDemo.cpp" EXPLICIT_BUILD_TARGET_NAME="all">
@@ -68,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604153578169</updated>
       <workItem from="1604153579596" duration="2899000" />
-      <workItem from="1604183509219" duration="5472000" />
+      <workItem from="1604183509219" duration="6649000" />
     </task>
     <servers />
   </component>
@@ -96,5 +100,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604185270456" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1604197095059">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604197095059" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604196113800">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604196113800" />
   </component>
 </project>
