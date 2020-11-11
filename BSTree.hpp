@@ -132,21 +132,29 @@ value_type BSTree<value_type>::remove(value_type item)
 {
     // Find where the item is in the tree
     BTNode<value_type>* tempNode = findItem(root, item);
-    cout << tempNode->getData() << endl;
+    if (tempNode == NULL)
+    {
+        return value_type();
+    }
     
     if (tempNode == root)
     {
-        cout << root->getRight() << endl;
-        BTNode<value_type>* replacementNode;
         if (root->getRight() != NULL)
         {
-            
-            replacementNode = findReplacement(root->getRight());
-            
+            BTNode<value_type>* replacementNode = findReplacement(root->getRight());
+            value_type tempData = remove(replacementNode->getData());
+            root->setData(tempData);
+            return tempData;
         }
         else if (root->getLeft() != NULL)
         {
-            replacementNode = findReplacement(root);
+            BTNode<value_type>* oldRoot = root;
+            root = root->getLeft();
+            root->setParent(NULL);
+            root->setSide(0);
+            value_type tempData = oldRoot->getData();
+            delete (oldRoot);
+            return tempData;
         }
         else
         {
@@ -156,21 +164,16 @@ value_type BSTree<value_type>::remove(value_type item)
             return tempData;
         }
         
-        value_type tempData = remove(replacementNode->getData());
-        cout << "begin" << tempData << "end" << endl;
-        root->setData(tempData);
-        return tempData;
+        
         return value_type();
     }
     
     // Check if item is a leaf node
     if ((tempNode->getLeft() == NULL) && (tempNode->getRight() == NULL))
     {
-        cout << "Leaf" << tempNode->getSide() << tempNode->getData() << endl;
         if (tempNode->getSide() == -1)
         {
             tempNode->getParent()->setLeft(NULL);
-            cout << tempNode->getParent()->getData() << tempNode->getParent()->getLeft() << endl;
         }
         else if (tempNode->getSide() == 1)
         {
@@ -186,7 +189,6 @@ value_type BSTree<value_type>::remove(value_type item)
     if (((tempNode->getLeft() == NULL) && (tempNode->getRight() != NULL)) ||
         ((tempNode->getRight() == NULL) && (tempNode->getLeft() != NULL)))
     {
-        cout << "start one child";
         if (tempNode->getSide() == -1)
         {
             if (tempNode->getLeft() != NULL)
@@ -217,17 +219,12 @@ value_type BSTree<value_type>::remove(value_type item)
         }
         value_type tempData = tempNode->getData();
         delete (tempNode);
-        cout << "end one child";
         return tempData;
     }
     
     // Has two children
-    cout << "hey";
     BTNode<value_type>* replacementNode = findReplacement(tempNode->getRight());
-    cout << replacementNode->getData();
-    cout << "beep" << endl;
     value_type tempData = remove(replacementNode->getData());
-    cout << "begin" << tempData << "end" << endl;
     tempNode->setData(tempData);
     return tempData;
     //return value_type();
@@ -380,6 +377,10 @@ BTNode<value_type>* BSTree<value_type>::findReplacement(BTNode<value_type>* test
 template <typename value_type>
 BTNode<value_type>* BSTree<value_type>::findItem(BTNode<value_type>* testNode, value_type item)
 {
+    if (testNode == NULL)
+    {
+        return NULL;
+    }
     if (compareData(testNode->getData(), item) == -1)
     {
         return findItem(testNode->getLeft(), item);
@@ -395,9 +396,24 @@ BTNode<value_type>* BSTree<value_type>::findItem(BTNode<value_type>* testNode, v
 }
 
 template <typename value_type>
-void BSTree<value_type>::operator+=(const BSTree<value_type>& tree2)
+value_type BSTree<value_type>::getRoot()
 {
+    if (root == NULL)
+    {
+        return value_type();
+    }
+    return root->getData();
+}
 
+template <typename value_type>
+void BSTree<value_type>::operator+=(BSTree<value_type>& tree2)
+{
+    while (tree2.getRoot().compare(value_type()) != 0)
+    {
+        value_type temp = tree2.getRoot();
+        add(temp);
+        tree2.remove(tree2.getRoot());
+    }
 }
 
 template <typename value_type>

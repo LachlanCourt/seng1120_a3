@@ -19,9 +19,11 @@ class BSTree
         
         value_type remove(value_type item);
         
-        void operator+=(const BSTree<value_type>& tree2);
+        void operator+=(BSTree<value_type>& tree2);
         
         string outputHelper();
+        
+        value_type getRoot();
     
     private:
         BTNode<value_type>* root;
