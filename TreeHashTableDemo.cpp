@@ -17,6 +17,7 @@ int main()
 	clock_t t;
 	BSTree<string> treeValues;
 	BSTree<string> treeAux;
+    //treeValues.add("Aaron");
     treeValues.add("Alex");
     treeValues.add("Peter");
     treeValues.add("John");
@@ -28,7 +29,7 @@ int main()
     
     cout << "Initial tree: " << treeValues << endl;
     
-    //treeValues.remove("Alex");
+    treeValues.remove("Alex");
     treeValues.remove("Peter");
     treeValues.remove("John");
     treeValues.remove("Pamela");
