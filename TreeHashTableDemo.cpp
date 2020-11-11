@@ -17,9 +17,31 @@ int main()
 	clock_t t;
 	BSTree<string> treeValues;
 	BSTree<string> treeAux;
-	//HTable<string> tableValues;
+    treeValues.add("Alex");
+    treeValues.add("Peter");
+    treeValues.add("John");
+    treeValues.add("Pamela");
+    treeValues.add("Kate");
+    treeValues.add("Tim");
+    treeValues.add("Steve");
+    treeValues.add("Rick");
+    
+    cout << "Initial tree: " << treeValues << endl;
+    
+    //treeValues.remove("Alex");
+    treeValues.remove("Peter");
+    treeValues.remove("John");
+    treeValues.remove("Pamela");
+    treeValues.remove("Kate");
+    treeValues.remove("Tim");
+    treeValues.remove("Steve");
+    treeValues.remove("Rick");
+    
+    cout << "Initial tree: " << treeValues << endl;
+    
+    //HTable<string> tableValues;
 	//HTable<string> tableAux;
-/*
+
 	string vectorStudents1[] = {"Alex", "John", "Mary", "Peter" , "Miranda" , "Claudia" , "Sandy" , "Daniel" , "Rick" , "Patricia" , "Adam" , "Bianca" , "Nadia", "Sylvia", "Pamela"};
 	string vectorStudents2[] = {"Travis", "Michelle", "Steve", "Phil", "Hugh", "Oliver", "Kate", "Tim", "David", "Ingrid", "Tom", "Fred", "Bill"};
 	
@@ -27,7 +49,7 @@ int main()
 	int numberOfElements2 = 13;
 	
 	cout << "==================" << endl << "BINARY SEARCH TREE" << endl;
-	t = clock(); 																	// gets current time
+	t = clock(); 	/*																// gets current time
 	for (int i=0; i<numberOfElements1; i++) {treeValues.add(vectorStudents1[i]);} 	// populates the main tree.
 	for (int i=0; i<numberOfElements2; i++) {treeAux.add(vectorStudents2[i]);} 		// populates the auxiliary tree ***THIS LINE HAS BEEN CORRECTED****
     	

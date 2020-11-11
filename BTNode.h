@@ -10,6 +10,7 @@ class BTNode
         // Constructors
         BTNode();
         BTNode(value_type data_, BTNode* parent_, BTNode* left_, BTNode* right_);
+        BTNode(value_type data_, BTNode* parent_, int side_);
         BTNode(value_type data_);
         // Destructor
         ~BTNode();
@@ -18,14 +19,17 @@ class BTNode
         void setParent(BTNode<value_type>* parent_);
         void setLeft(BTNode<value_type>* left_);
         void setRight(BTNode<value_type>* right_);
+        void setSide(int side_);
         // Query
         value_type getData() const;
         BTNode<value_type>* getParent();
         BTNode<value_type>* getRight();
         BTNode<value_type>* getLeft();
+        int getSide();
 
     private:
         value_type data;
+        int side = 0;
         BTNode* left;
         BTNode* right;
         BTNode* parent;

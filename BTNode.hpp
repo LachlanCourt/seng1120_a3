@@ -18,6 +18,16 @@ BTNode<value_type>::BTNode(value_type data_, BTNode* parent_, BTNode* left_, BTN
 }
 
 template <typename value_type>
+BTNode<value_type>::BTNode(value_type data_, BTNode* parent_, int side_)
+{
+    data = data_;
+    parent = parent_;
+    side = side_;
+    left = NULL;
+    right = NULL;
+}
+
+template <typename value_type>
 BTNode<value_type>::BTNode(value_type data_)
 {
     data = data_;
@@ -61,6 +71,12 @@ void BTNode<value_type>::setRight(BTNode<value_type>* right_)
 }
 
 template <typename value_type>
+void BTNode<value_type>::setSide(int side_)
+{
+    side = side_;
+}
+
+template <typename value_type>
 value_type BTNode<value_type>::getData() const
 {
     return data;
@@ -83,3 +99,11 @@ BTNode<value_type>* BTNode<value_type>::getLeft()
 {
     return left;
 }
+
+template <typename value_type>
+int BTNode<value_type>::getSide()
+{
+    return side;
+}
+
+

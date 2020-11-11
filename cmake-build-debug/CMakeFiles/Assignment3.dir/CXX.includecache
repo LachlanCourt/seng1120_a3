@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/BSTree.h
+iostream
+-
+BTNode.h
+/cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/BTNode.h
+BSTree.hpp
+/cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/BSTree.hpp
+
+/cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/BSTree.hpp
+iostream
+-
+sstream
+-
+
+/cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/BTNode.h
+iostream
+-
+BTNode.hpp
+/cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/BTNode.hpp
+
+/cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/BTNode.hpp
+iostream
+-
+
+/cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/TreeHashTableDemo.cpp
+iostream
+-
+cstdlib
+-
+time.h
+-
+BSTree.h
+/cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/BSTree.h
+
