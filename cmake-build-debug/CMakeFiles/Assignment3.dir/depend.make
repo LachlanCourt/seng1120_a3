@@ -5,5 +5,7 @@ CMakeFiles/Assignment3.dir/TreeHashTableDemo.cpp.o: ../BSTree.h
 CMakeFiles/Assignment3.dir/TreeHashTableDemo.cpp.o: ../BSTree.hpp
 CMakeFiles/Assignment3.dir/TreeHashTableDemo.cpp.o: ../BTNode.h
 CMakeFiles/Assignment3.dir/TreeHashTableDemo.cpp.o: ../BTNode.hpp
+CMakeFiles/Assignment3.dir/TreeHashTableDemo.cpp.o: ../HTable.h
+CMakeFiles/Assignment3.dir/TreeHashTableDemo.cpp.o: ../HTable.hpp
 CMakeFiles/Assignment3.dir/TreeHashTableDemo.cpp.o: ../TreeHashTableDemo.cpp
 

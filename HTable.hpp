@@ -9,7 +9,7 @@ HTable<value_type>::HTable()
 template <typename value_type>
 HTable<value_type>::~HTable()
 {
-
+    // The hash table is stored on the stack and will be automatically deleted at the end of the program execution
 }
 
 template <typename value_type>
@@ -64,8 +64,10 @@ void HTable<value_type>::operator+=(HTable hTable2)
     value_type* contents = hTable2.getContents();
     for (int i = 0; i < hTable2.getSize(); i++)
     {
-        add(contents[i]);
+        string temp = contents[i];
+        add(temp);
     }
+    //delete(contents);
 }
 
 template <typename value_type>

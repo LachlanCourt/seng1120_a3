@@ -40,7 +40,7 @@ class BSTree
 };
 
 template <typename value_type>
-ostream& operator<<(ostream& out, BSTree<value_type> temp);
+ostream& operator<<(ostream& out, BSTree<value_type>& temp);
 
 #include "BSTree.hpp"
 

@@ -30,6 +30,16 @@ BTNode.hpp
 iostream
 -
 
+/cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/HTable.h
+iostream
+-
+HTable.hpp
+/cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/HTable.hpp
+
+/cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/HTable.hpp
+iostream
+-
+
 /cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/TreeHashTableDemo.cpp
 iostream
 -
@@ -39,4 +49,6 @@ time.h
 -
 BSTree.h
 /cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/BSTree.h
+HTable.h
+/cygdrive/c/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3/HTable.h
 

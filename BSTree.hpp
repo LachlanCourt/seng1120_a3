@@ -11,11 +11,10 @@ BSTree<value_type>::BSTree()
 template <typename value_type>
 BSTree<value_type>::~BSTree()
 {
-    /*
-    if (root != NULL)
+    while (root != NULL)
     {
-        delete root;
-    }*/
+        remove(root->getData());
+    }
 }
 
 template <typename value_type>
@@ -101,7 +100,6 @@ int BSTree<value_type>::compareData(string nodeData, string testData)
     {
         return 1;
     }
-    return 1;
 }
 
 template <typename value_type>
@@ -163,9 +161,6 @@ value_type BSTree<value_type>::remove(value_type item)
             root = NULL;
             return tempData;
         }
-        
-        
-        return value_type();
     }
     
     // Check if item is a leaf node
@@ -228,8 +223,6 @@ value_type BSTree<value_type>::remove(value_type item)
     tempNode->setData(tempData);
     return tempData;
     //return value_type();
-    
-    
     /*
     if (tempNode->getSide() == 1)
     {
@@ -357,7 +350,6 @@ value_type BSTree<value_type>::remove(value_type item)
         }
     }
     */
-    
 }
 
 template <typename value_type>
@@ -393,6 +385,7 @@ BTNode<value_type>* BSTree<value_type>::findItem(BTNode<value_type>* testNode, v
     {
         return testNode;
     }
+    return NULL;
 }
 
 template <typename value_type>
@@ -417,7 +410,7 @@ void BSTree<value_type>::operator+=(BSTree<value_type>& tree2)
 }
 
 template <typename value_type>
-ostream& operator<<(ostream& out, BSTree<value_type> temp)
+ostream& operator<<(ostream& out, BSTree<value_type>& temp)
 {
     out << temp.outputHelper();
     return out;

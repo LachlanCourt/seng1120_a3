@@ -6,6 +6,7 @@ BTNode<value_type>::BTNode()
     parent = NULL;
     left = NULL;
     right = NULL;
+    side = 0;
 }
 
 template <typename value_type>
@@ -15,6 +16,7 @@ BTNode<value_type>::BTNode(value_type data_, BTNode* parent_, BTNode* left_, BTN
     parent = parent_;
     left = left_;
     right = right_;
+    side = 0;
 }
 
 template <typename value_type>
@@ -34,6 +36,7 @@ BTNode<value_type>::BTNode(value_type data_)
     parent = NULL;
     left = NULL;
     right = NULL;
+    side = 0;
 }
 
 // Destructor
@@ -101,7 +104,7 @@ BTNode<value_type>* BTNode<value_type>::getLeft()
 }
 
 template <typename value_type>
-int BTNode<value_type>::getSide()
+const int BTNode<value_type>::getSide() const
 {
     return side;
 }

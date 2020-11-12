@@ -17,8 +17,7 @@ int main()
 	clock_t t;
 	BSTree<string> treeValues;
 	BSTree<string> treeAux;
-    
-    HTable<string> tableValues;
+	HTable<string> tableValues;
 	HTable<string> tableAux;
 
 	string vectorStudents1[] = {"Alex", "John", "Mary", "Peter" , "Miranda" , "Claudia" , "Sandy" , "Daniel" , "Rick" , "Patricia" , "Adam" , "Bianca" , "Nadia", "Sylvia", "Pamela"};
@@ -37,7 +36,7 @@ int main()
 	cout << "Initial tree: " << treeValues << endl; 								// prints the contents of the tree.
 
     for (int i=0; i<500000; i++)													// add and remove over and over again
-    {
+    { 								
        	treeValues.remove("Alex");
 		treeValues.remove("Peter");
 		treeValues.remove("John");
@@ -59,7 +58,8 @@ int main()
 	cout << "Final tree  : " << treeValues << endl << endl; 						// prints the contents of the tree.
 	cout << "Time elapsed: " << (clock() - t)/1000.0 << " seconds" << endl; 		// prints elapsed time.
 	cout << "Time per ins/del operation: " << 1000.0*(double)(clock() - t)/(double)(500000*17) << " milliseconds." << endl << endl;
-	
+
+
 	cout << "==================" << endl << "HASH TABLE" << endl;
 	t = clock(); 																	// gets current time
 	for (int i=0; i<numberOfElements1; i++) {tableValues.add(vectorStudents1[i]);} 	// populates the main hash table.

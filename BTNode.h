@@ -25,11 +25,11 @@ class BTNode
         BTNode<value_type>* getParent();
         BTNode<value_type>* getRight();
         BTNode<value_type>* getLeft();
-        int getSide();
+        const int getSide() const;
 
     private:
         value_type data;
-        int side = 0;
+        int side;
         BTNode* left;
         BTNode* right;
         BTNode* parent;
