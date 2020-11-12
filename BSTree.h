@@ -15,26 +15,26 @@ class BSTree
         
         ~BSTree();
         
-        void add(value_type);
+        void add(const value_type item);
         
-        value_type remove(value_type item);
+        value_type remove(const value_type item);
         
         void operator+=(BSTree<value_type>& tree2);
         
-        string outputHelper();
+        const string outputHelper();
         
-        value_type getRoot();
+        const value_type getRoot();
     
     private:
         BTNode<value_type>* root;
         
-        void addHelper(BTNode<value_type>* testNode, value_type check);
+        void addHelper(BTNode<value_type>* testNode, const value_type check);
         
-        int compareData(string nodeData, string testData);
+        const int compareData(const string nodeData, const string testData);
         
-        string infix(BTNode<value_type>* node);
+        const string infix(BTNode<value_type>* node);
         
-        BTNode<value_type>* findItem(BTNode<value_type>* testNode, value_type item);
+        BTNode<value_type>* findItem(BTNode<value_type>* testNode, const value_type item);
         
         BTNode<value_type>* findReplacement(BTNode<value_type>* testNode);
 };

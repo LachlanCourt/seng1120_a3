@@ -13,20 +13,20 @@ class HTable
         
         ~HTable();
         
-        void add(value_type item);
+        void add(const value_type item);
         
-        value_type remove(value_type item);
+        value_type remove(const value_type item);
         
-        void operator += (HTable hTable2);
+        void operator += (const HTable hTable2);
         
-        string outputHelper();
+        const string outputHelper();
         
-        int getSize();
+        const int getSize() const;
         
         value_type* getContents();
     
     private:
-        int hashfun(value_type item);
+        const int hashfun(value_type item);
         
         value_type data[150];
 };

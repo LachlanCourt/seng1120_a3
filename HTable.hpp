@@ -29,7 +29,7 @@ value_type HTable<value_type>::remove(value_type item)
 }
 
 template <typename value_type>
-int HTable<value_type>::getSize()
+const int HTable<value_type>::getSize() const
 {
     int count = 0;
     for (int i = 0; i < 150; i++)
@@ -71,7 +71,7 @@ void HTable<value_type>::operator+=(HTable hTable2)
 }
 
 template <typename value_type>
-int HTable<value_type>::hashfun(value_type item)
+const int HTable<value_type>::hashfun(value_type item)
 {
     int addResult = 0;
     for (long unsigned int i = 0; i < item.length(); i++)
@@ -86,7 +86,7 @@ int HTable<value_type>::hashfun(value_type item)
 }
 
 template <typename value_type>
-string HTable<value_type>::outputHelper()
+const string HTable<value_type>::outputHelper()
 {
     string returnData = "\n";
     for (int i = 0; i < 150; i++)

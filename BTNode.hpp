@@ -86,19 +86,19 @@ value_type BTNode<value_type>::getData() const
 }
 
 template <typename value_type>
-BTNode<value_type>* BTNode<value_type>::getParent()
+BTNode<value_type>* BTNode<value_type>::getParent() const
 {
     return parent;
 }
 
 template <typename value_type>
-BTNode<value_type>* BTNode<value_type>::getRight()
+BTNode<value_type>* BTNode<value_type>::getRight() const
 {
     return right;
 }
 
 template <typename value_type>
-BTNode<value_type>* BTNode<value_type>::getLeft()
+BTNode<value_type>* BTNode<value_type>::getLeft() const
 {
     return left;
 }

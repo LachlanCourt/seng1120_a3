@@ -18,14 +18,14 @@ BSTree<value_type>::~BSTree()
 }
 
 template <typename value_type>
-void BSTree<value_type>::add(value_type data_)
+void BSTree<value_type>::add(value_type item)
 {
     if (root == NULL)
     {
-        root = new BTNode<value_type>(data_);
+        root = new BTNode<value_type>(item);
         return;
     }
-    addHelper(root, data_);
+    addHelper(root, item);
 }
 
 template <typename value_type>
@@ -67,7 +67,7 @@ void BSTree<value_type>::addHelper(BTNode<value_type>* testNode, value_type data
 }
 
 template <typename value_type>
-int BSTree<value_type>::compareData(string nodeData, string testData)
+const int BSTree<value_type>::compareData(string nodeData, string testData)
 {
     // Determine which of the two words is shorter
     int smallest = (int) nodeData.length();
@@ -103,19 +103,19 @@ int BSTree<value_type>::compareData(string nodeData, string testData)
 }
 
 template <typename value_type>
-string BSTree<value_type>::outputHelper()
+const string BSTree<value_type>::outputHelper()
 {
     return infix(root);
 }
 
 template <typename value_type>
-string BSTree<value_type>::infix(BTNode<value_type>* node)
+const string BSTree<value_type>::infix(BTNode<value_type>* node)
 {
     if (node == NULL)
     {
         return "";
     }
-    else if (node->getData() == "")
+    else if (node->getData().compare(value_type()) == 0)
     {
         return "";
     }
@@ -389,7 +389,7 @@ BTNode<value_type>* BSTree<value_type>::findItem(BTNode<value_type>* testNode, v
 }
 
 template <typename value_type>
-value_type BSTree<value_type>::getRoot()
+const value_type BSTree<value_type>::getRoot()
 {
     if (root == NULL)
     {
