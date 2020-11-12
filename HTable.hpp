@@ -21,14 +21,51 @@ void HTable<value_type>::add(value_type item)
 template <typename value_type>
 value_type HTable<value_type>::remove(value_type item)
 {
-    data[hashfun(item)] = value_type();
+    if (data[hashfun(item)].compare(item) == 0)
+    {
+        data[hashfun(item)] = value_type();
+    }
     return item;
+}
+
+template <typename value_type>
+int HTable<value_type>::getSize()
+{
+    int count = 0;
+    for (int i = 0; i < 150; i++)
+    {
+        if (data[i].compare(value_type()) != 0)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+template <typename value_type>
+value_type* HTable<value_type>::getContents()
+{
+    static value_type contents[150];
+    int size = 0;
+    for (int i = 0; i < 150; i++)
+    {
+        if (data[i].compare(value_type()) != 0)
+        {
+            contents[size] = data[i];
+            size++;
+        }
+    }
+    return contents;
 }
 
 template <typename value_type>
 void HTable<value_type>::operator+=(HTable hTable2)
 {
-
+    value_type* contents = hTable2.getContents();
+    for (int i = 0; i < hTable2.getSize(); i++)
+    {
+        add(contents[i]);
+    }
 }
 
 template <typename value_type>
@@ -46,15 +83,15 @@ int HTable<value_type>::hashfun(value_type item)
     
 }
 
-template <typename  value_type>
+template <typename value_type>
 string HTable<value_type>::outputHelper()
 {
     string returnData = "\n";
-    for (int i = 0; i<150;i++)
+    for (int i = 0; i < 150; i++)
     {
         if (data[i].compare(value_type()) != 0)
         {
-            returnData += data[i] + "\n";
+            returnData += "\n" + data[i] + "\n";
         }
     }
     return returnData;

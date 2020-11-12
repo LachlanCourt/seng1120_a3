@@ -20,6 +20,10 @@ class HTable
         void operator += (HTable hTable2);
         
         string outputHelper();
+        
+        int getSize();
+        
+        value_type* getContents();
     
     private:
         int hashfun(value_type item);
