@@ -10,4 +10,6 @@ add_executable(Assignment3
         BSTree.hpp
         BTNode.h
         BTNode.hpp
+        HTable.h
+        HTable.hpp
         TreeHashTableDemo.cpp)

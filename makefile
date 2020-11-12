@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall -std=c++98
 LDFLAGS=
-SOURCES=TreeHashTableDemo.cpp BTNode.h
+SOURCES=TreeHashTableDemo.cpp BTNode.h BSTree.h HTable.h
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=a3
 

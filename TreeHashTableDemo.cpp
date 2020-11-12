@@ -9,24 +9,24 @@
 #include <cstdlib>
 #include <time.h>
 #include "BSTree.h"
-//#include "HTable.h"
+#include "HTable.h"
 using namespace std;
 
 int main()
 {
 	clock_t t;
-	BSTree<string> treeValues;
-	BSTree<string> treeAux;
+	//BSTree<string> treeValues;
+	//BSTree<string> treeAux;
     
-    //HTable<string> tableValues;
-	//HTable<string> tableAux;
+    HTable<string> tableValues;
+	HTable<string> tableAux;
 
 	string vectorStudents1[] = {"Alex", "John", "Mary", "Peter" , "Miranda" , "Claudia" , "Sandy" , "Daniel" , "Rick" , "Patricia" , "Adam" , "Bianca" , "Nadia", "Sylvia", "Pamela"};
 	string vectorStudents2[] = {"Travis", "Michelle", "Steve", "Phil", "Hugh", "Oliver", "Kate", "Tim", "David", "Ingrid", "Tom", "Fred", "Bill"};
 	
 	int numberOfElements1 = 15;
 	int numberOfElements2 = 13;
-	
+	/*
 	cout << "==================" << endl << "BINARY SEARCH TREE" << endl;
 	t = clock(); 																	// gets current time
 	for (int i=0; i<numberOfElements1; i++) {treeValues.add(vectorStudents1[i]);} 	// populates the main tree.
@@ -60,16 +60,23 @@ int main()
 	cout << "Time elapsed: " << (clock() - t)/1000.0 << " seconds" << endl; 		// prints elapsed time.
 	cout << "Time per ins/del operation: " << 1000.0*(double)(clock() - t)/(double)(500000*17) << " milliseconds." << endl << endl;
 
-/*
+*/
 	cout << "==================" << endl << "HASH TABLE" << endl;
 	t = clock(); 																	// gets current time
 	for (int i=0; i<numberOfElements1; i++) {tableValues.add(vectorStudents1[i]);} 	// populates the main hash table.
 	for (int i=0; i<numberOfElements2; i++) {tableAux.add(vectorStudents2[i]);} 	// populates the aux hash table.
+    
+    tableValues.remove("Alex");
+    tableValues.remove("Peter");
+    tableValues.remove("John");
+    tableValues.add("Alex");
+    tableValues.add("Peter");
+    tableValues.add("John");
 	
-	tableValues += tableAux; 														// tests overloaded += operator
+	//tableValues += tableAux; 														// tests overloaded += operator
 	
 	cout << "Initial hash table: " << tableValues << endl; 							// prints the contents of the hash table.
-
+/*
 	for (int i=0; i<500000; i++)													// add and remove over and over again
 	{ 
         tableValues.remove("Alex");
