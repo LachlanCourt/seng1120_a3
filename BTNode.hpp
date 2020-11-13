@@ -1,5 +1,13 @@
+/*************************************
+**** Lachlan Court
+**** c3308061
+**** 13/11/2020
+**** SENG1120 Assignment 3
+**************************************/
+
 #include <iostream>
 
+// Default Contructor
 template <typename value_type>
 BTNode<value_type>::BTNode()
 {
@@ -9,6 +17,7 @@ BTNode<value_type>::BTNode()
     side = 0;
 }
 
+// Constructors
 template <typename value_type>
 BTNode<value_type>::BTNode(value_type data_, BTNode* parent_, BTNode* left_, BTNode* right_)
 {
@@ -48,61 +57,71 @@ BTNode<value_type>::~BTNode()
      * deleted
      */
 }
-// Mutators
+
+// Sets the data variable to the value of the argument
 template <typename value_type>
-void BTNode<value_type>::setData(const value_type data_)
+void BTNode<value_type>::setData(value_type data_)
 {
     data = data_;
 }
 
+// Sets the parent node to the value in the argument
 template <typename value_type>
 void BTNode<value_type>::setParent(BTNode<value_type>* parent_)
 {
     parent = parent_;
 }
 
+// Sets the left node to the value in the argument
 template <typename value_type>
 void BTNode<value_type>::setLeft(BTNode<value_type>* left_)
 {
     left = left_;
 }
 
+// Sets the right node to the value in the argument
 template <typename value_type>
 void BTNode<value_type>::setRight(BTNode<value_type>* right_)
 {
     right = right_;
 }
 
+// Sets the side to the value in the argument
 template <typename value_type>
 void BTNode<value_type>::setSide(int side_)
 {
     side = side_;
 }
 
+// Returns the data of the node
 template <typename value_type>
 value_type BTNode<value_type>::getData() const
 {
     return data;
 }
 
+// Returns the parent of the node
 template <typename value_type>
 BTNode<value_type>* BTNode<value_type>::getParent() const
 {
     return parent;
 }
 
+// Returns the right child of the node
 template <typename value_type>
 BTNode<value_type>* BTNode<value_type>::getRight() const
 {
     return right;
 }
 
+// Returns the left child of the node
 template <typename value_type>
 BTNode<value_type>* BTNode<value_type>::getLeft() const
 {
     return left;
 }
 
+// Returns the which side of the parent the node is on
 template <typename value_type>
 const int BTNode<value_type>::getSide() const
 {

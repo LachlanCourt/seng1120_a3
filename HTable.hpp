@@ -1,3 +1,10 @@
+/*************************************
+**** Lachlan Court
+**** c3308061
+**** 13/11/2020
+**** SENG1120 Assignment 3
+**************************************/
+
 #include <iostream>
 
 template <typename value_type>

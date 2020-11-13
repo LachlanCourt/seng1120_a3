@@ -1,4 +1,12 @@
+/*************************************
+**** Lachlan Court
+**** c3308061
+**** 13/11/2020
+**** SENG1120 Assignment 3
+**************************************/
+
 //cd /cygdrive/C/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment3
+
 #include <iostream>
 #include <sstream>
 
