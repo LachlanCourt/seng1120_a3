@@ -97,6 +97,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="CMake Application.Assignment3" />
       <item itemvalue="CMake Application.Assignment3 (1)" />
@@ -125,7 +130,7 @@
       <workItem from="1605172499712" duration="282000" />
       <workItem from="1605173504083" duration="3305000" />
       <workItem from="1605216106170" duration="5104000" />
-      <workItem from="1605224596899" duration="3794000" />
+      <workItem from="1605224596899" duration="9820000" />
     </task>
     <servers />
   </component>
