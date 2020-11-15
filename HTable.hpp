@@ -59,7 +59,13 @@ const int HTable<value_type>::getSize() const
     return count;
 }
 
+/*
+ * I think that this would lead to a memory leak and so I commented it out and replaced it with a string specific
+ * function. This defeats the purpose of the template in this instance but I couldn't think of another way to do it
+ */
+
 // Returns only the valid contents of the hashtable array
+/*
 template <typename value_type>
 value_type* HTable<value_type>::getContents()
 {
@@ -80,9 +86,34 @@ value_type* HTable<value_type>::getContents()
     }
     // Return the pointer to the contents array
     return contents;
+}*/
+
+// Returns only the valid contents of the hashtable array
+template <typename value_type>
+string HTable<value_type>::getContents()
+{
+    // Initialise an empty string to hold the contents
+    string contents = "";
+    // Loop through every element of the hashtable array
+    for (int i = 0; i < 150; i++)
+    {
+        // If the element is not a default item, add it to the contents array
+        if (data[i].compare(value_type()) != 0)
+        {
+            contents += data[i] + " ";
+        }
+    }
+    // Return the pointer to the contents array
+    return contents;
 }
 
+/*
+ * I think that this would lead to a memory leak and so I commented it out and replaced it with a string specific
+ * function. This defeats the purpose of the template in this instance but I couldn't think of another way to do it
+ */
+
 // Overloaded += operator
+/*
 template <typename value_type>
 void HTable<value_type>::operator+=(HTable hTable2)
 {
@@ -95,7 +126,36 @@ void HTable<value_type>::operator+=(HTable hTable2)
         value_type temp = value_type(contents[i]);
         add(temp);
     }
-    //delete(contents);
+    //if (contents != NULL)
+    //{
+    //    delete (contents);
+    //}
+}*/
+
+// Overloaded += operator
+template <typename value_type>
+void HTable<value_type>::operator+=(HTable hTable2)
+{
+    // Get a new array of the contents of the hashtable array
+    string contents = hTable2.getContents();
+    // Declare a temp string which will hold the value of the string iterated so far
+    string temp = "";
+    // Loop through the parsed data one character at a time
+    for (long unsigned int i = 0; i < contents.length(); i++)
+    {
+        // If the character is a space, the word will be added to the table
+        if (contents[i] == ' ')
+        {
+            add(value_type(temp));
+            // Reset temp ready for a new word
+            temp = "";
+        }
+        else
+        {
+            // If the character is not a space, add the character to temp
+            temp += contents[i];
+        }
+    }
 }
 
 // Hash Function
@@ -112,7 +172,6 @@ const int HTable<value_type>::hashfun(value_type item)
     }
     // Modulus divide the result by the number of positions in the array and return
     return addResult % 150;
-    
 }
 
 // Public helper function to output the hashtable
@@ -120,14 +179,14 @@ template <typename value_type>
 const string HTable<value_type>::outputHelper()
 {
     // Initialise the string with a newline
-    string returnData = "\n";
+    string returnData = " ";
     // Loop through each item in the array
     for (int i = 0; i < 150; i++)
     {
         // If the array is not a default item, add it to the returnData string with newline characters for formatting
         if (data[i].compare(value_type()) != 0)
         {
-            returnData += "\n" + data[i] + "\n";
+            returnData += data[i] + " ";
         }
     }
     // Return

@@ -58,7 +58,7 @@ void BSTree<value_type>::addHelper(BTNode<value_type>* testNode, value_type data
             testNode = NULL;
             return;
         }
-            // If there already is a left child, call the helper function again on that left child
+        // If there already is a left child, call the helper function again on that left child
         else
         {
             addHelper(testNode->getLeft(), data_);
@@ -66,7 +66,7 @@ void BSTree<value_type>::addHelper(BTNode<value_type>* testNode, value_type data
             return;
         }
     }
-        // If it comes after
+    // If it comes after
     else if (nextNode == 1)
     {
         // If there is no right child currently, add a new right child with the specified data
@@ -84,7 +84,7 @@ void BSTree<value_type>::addHelper(BTNode<value_type>* testNode, value_type data
             return;
         }
     }
-        // If the item is identical to an item already in the tree, simply return as the tree cannot contain duplicates
+    // If the item is identical to an item already in the tree, simply return as the tree cannot contain duplicates
     else if (nextNode == 0)
     {
         testNode = NULL;
@@ -149,13 +149,13 @@ const string BSTree<value_type>::infix(BTNode<value_type>* node)
     {
         return "";
     }
-        /*
-         * If the traversal has not reached a leaf, call infix on the left child, then add it's own data, then on the right
-         * child and return the result
-         */
+    /*
+    * If the traversal has not reached a leaf, call infix on the left child, then add it's own data, then on the right
+    * child and return the result
+    */
     else
     {
-        return infix(node->getLeft()) + "\n" + node->getData() + "\n" + infix(node->getRight());
+        return infix(node->getLeft()) + node->getData() + " " + infix(node->getRight());
     }
 }
 
@@ -186,7 +186,7 @@ value_type BSTree<value_type>::remove(value_type item)
             // Return the data
             return tempData;
         }
-            // Check if the root node has a left child (Therefore mustn't have a right child
+        // Check if the root node has a left child (Therefore mustn't have a right child
         else if (root->getLeft() != NULL)
         {
             // Save the old root node
@@ -202,7 +202,7 @@ value_type BSTree<value_type>::remove(value_type item)
             // Return the data
             return tempData;
         }
-            // The root node has no children
+        // The root node has no children
         else
         {
             // Save the data of the root node
@@ -224,7 +224,7 @@ value_type BSTree<value_type>::remove(value_type item)
             // Set the parent's left child pointer to NULL
             tempNode->getParent()->setLeft(NULL);
         }
-            // If the node being removed is a right child
+        // If the node being removed is a right child
         else if (tempNode->getSide() == 1)
         {
             // Set the parent's right child pointer to NULL

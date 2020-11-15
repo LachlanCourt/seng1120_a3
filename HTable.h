@@ -39,7 +39,8 @@ class HTable
         const int getSize() const;
         // Precondition: Return value must be iterated through using getSize in order to ensure all data is accessed
         // Postcondition: Returns an array containing all valid data items in the hashtable at the beginning
-        value_type* getContents();
+        string getContents();
+        //value_type* getContents();
     
     private:
         // Precondition: None
