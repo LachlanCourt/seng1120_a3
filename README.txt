@@ -1,1 +1,0 @@
-My BST takes around 22 seconds. It's not stuck in a while loop or something I promise, just give it some time! I'm not sure what is going on but yea
